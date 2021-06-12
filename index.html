@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>404 GitHub Parallax</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <img src="./img/bg.jpeg" class="bg" alt="background image">
+
+    <div class="container">
+        <img src="./img/backHouse.png" alt="" class="backHouse">
+        <img src="./img/frontHouse.png" alt="" class="frontHouse">
+        <img src="./img/speederShadow.png" alt="" class="speederShadow">
+        <img src="./img/speeder.png" alt="" class="speeder">
+        <img src="./img/catShadow.png" alt="" class="catShadow">
+        <img src="./img/cat.png" alt="" class="cat">
+        <img src="./img/text.png" alt="" class="text">
+    </div>
+</div>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+
+    jQuery(function () {
+
+        // Add event listener
+        document.addEventListener("mousemove", parallax);
+        const z0 = document.querySelector(".bg");
+        const z3 = document.querySelector(".backHouse");
+        const z4 = document.querySelector(".frontHouse");
+        const z5 = document.querySelector(".speederShadow");
+        const z6 = document.querySelector(".speeder");
+        const z7 = document.querySelector(".catShadow");
+        const z8 = document.querySelector(".cat");
+        const z9 = document.querySelector(".text");
+
+
+        // Magic happens here
+        function parallax(e) {
+            let _w = window.innerWidth / 2;
+            let _h = window.innerHeight / 2;
+            let _mouseX = e.clientX;
+            let _mouseY = e.clientY;
+
+            let z0Move = `${(_mouseX - _w) * -0.01}px, ${(_mouseY - _h) * -0.01}px`;
+            let z3Move = `${(_mouseX - _w) * -0.03}px, ${(_mouseY - _h) * -0.03}px`;
+            let z4Move = `${(_mouseX - _w) * -0.02}px, ${(_mouseY - _h) * -0.02}px`;
+            let z5Move = `${(_mouseX - _w) * 0.01}px, ${(_mouseY - _h) * 0.01}px`;
+            let z6Move = `${(_mouseX - _w) * 0.01}px, ${(_mouseY - _h) * 0.01}px`;
+            let z7Move = `${(_mouseX - _w) * 0.01}px, ${(_mouseY - _h) * 0.01}px`;
+            let z8Move = `${(_mouseX - _w) * 0.01}px, ${(_mouseY - _h) * 0.01}px`;
+            let z9Move = `${(_mouseX - _w) * 0.02}px, ${(_mouseY - _h) * 0.02}px`;
+
+            z0.style.transform = `translate(${z0Move})`;
+            z3.style.transform = `translate(${z3Move})`;
+            z4.style.transform = `translate(${z4Move})`;
+            z5.style.transform = `translate(${z5Move})`;
+            z6.style.transform = `translate(${z6Move})`;
+            z7.style.transform = `translate(${z7Move})`;
+            z8.style.transform = `translate(${z8Move})`;
+            z9.style.transform = `translate(${z9Move})`;
+
+
+        }
+    });
+
+
+</script>
+</body>
+</html>
